@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="description" content="A crafty search engine">
+	<meta name="keywords" content="search engine, crafts, crafty, searching, crafting">
+	<meta name="author" content="Matt Mace">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Search Craft</title>
 	<link rel="stylesheet" type"text/css" href="styles/style.css">
 </head>

@@ -1,5 +1,5 @@
 <?php
-
+include("config.php");//db
 	//If user don't type anything in search, resond with messege.
 	$term = isset($_GET["term"]) ? $_GET["term"] : exit("I work with words. No words, no search!");
 
