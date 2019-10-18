@@ -1,0 +1,168 @@
+* {
+    font-family: Helvetica,arial,sans-serif;
+    color: #1D1E20;
+}
+
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper.indexPage {
+    Justify-content: center;
+}
+
+.mainContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContain .logoContain {
+    width: 400px;
+    text-align: center;
+}
+
+.logoContain img {
+    width: 100%;
+}
+
+.mainContain .searchContain {
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.mainContain .searchContain form {
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+}
+
+.searchContain .searchBtn {
+    color: #363946;
+    background-color: #D8D8D8;
+    border: none;
+    height: 40px;
+    width: 150px;
+    border-radius: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.mainContain .searchBarContain .searchBox {
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.06);
+    height: 50px;
+    border-radius: 3px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 75%;
+    max-width: 750px;
+    color: #363946;
+}
+
+.wrapper .headerContent {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background-color: oldlace;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.headerContent .logoContain {
+    width: 210px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+}
+
+.headerContent .searchContain {
+    flex: 1;
+}
+
+.headerContent .searchContain form {
+    margin: 15px 0 20px 0;
+}
+
+
+.headerContent .searchBarContain {
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.02),0 0 0 1px rgba(0,0,0,0.06);
+    background-color: #FFF;
+    width: 95%;
+    max-width: 750px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.headerContent .searchBarContain .searchBox {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding: 12px;
+    font-size: 18px;
+    color: #363946;
+}
+
+.headerContent .searchBarContain .searchBtn {
+    background-color: #FFF;
+    height: 50px;
+    margin-top: 0;
+    width: 50px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: center;
+ }
+
+.headerContent .searchBarContain .searchBtn img {
+     width: 30px;
+
+}
+
+
+.tabNavContain {
+    margin-left: 150px;
+}
+
+.tabNavContain .tabNav {
+    padding: 0;
+    
+
+}
+
+.tabNavContain .tabNav li {
+    display: inline;
+    padding: 0 15px 10px 15px;
+    color: #363946;
+    font-size: 18px;
+
+}
+
+.tabNavContain .tabNav li a {
+    text-decoration: none;
+}
+
+.tabNavContain .tabNav li.active {
+    border-bottom: 2px solid #A00000;
+}
+
+.tabNavContain .tabNav li.active a {
+    font-weight: bold;
+    color: #A00000;
+}
