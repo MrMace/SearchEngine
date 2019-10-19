@@ -205,7 +205,7 @@ function linkFollow($url) {
 }
 
 //$startURL = "https://www.michaels.com/";
-$startURL = "https://www.kiwico.com/diy/Arts-and-Crafts-Ideas/1";
+//$startURL = "https://www.kiwico.com/diy/Arts-and-Crafts-Ideas/1";
 //$startURL = "https://www.hobbylobby.com/";
 //$startURL = "https://www.orlandoweekly.com/Blogs/archives/2019/07/04/new-museum-of-american-arts-and-crafts-movement-readies-for-its-grand-opening-this-winter-in-st-pete";
 //$startURL = "https://rhythmsofplay.com/arts-crafts/";
@@ -213,7 +213,7 @@ $startURL = "https://www.kiwico.com/diy/Arts-and-Crafts-Ideas/1";
 //$startURL = "https://www.enasco.com/c/Art-Supplies-Crafts";
 //$startURL = "https://artsandcraftshomes.com/";
 //$startURL = "https://www.artistcraftsman.com/";
-//$startURL = "http://www.arts-crafts.com/";
+$startURL = "http://www.arts-crafts.com/";
 //$startURL = "https://www.education.com/activity/arts-and-crafts/";
 //$startURL = "https://artfulparent.com/kids-arts-crafts-activities-500-fun-artful-things-kids/";
 //$startURL = "https://www.etsy.com/";
