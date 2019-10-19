@@ -1,6 +1,7 @@
 <?php
 include("config.php");//db
 include("classes/ResultsProvider.php"); //class call
+include("classes/ImgResultsProvider.php"); //class call
 	//If user don't type anything in search, resond with messege.
 	$term = isset($_GET["term"]) ? $_GET["term"] : exit("I work with words. No words, no search!");
 
@@ -15,6 +16,7 @@ include("classes/ResultsProvider.php"); //class call
 <html>
 <head>
 	<title>Search Craft</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type"text/css" href="styles/style.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -67,9 +69,18 @@ include("classes/ResultsProvider.php"); //class call
 	<div class="resultSection">
 	
 		<?php 
+
+		//different classes sleected based on the link of website or images in search.
 		
-			$resultsProvider = new ResultsProvider($con);
-			$pageSize = 20;
+			if($type == "websites"){
+				$resultsProvider = new ResultsProvider($con);
+				$pageSize = 20;
+
+			}else{
+					$resultsProvider = new ImgResultsProvider($con);
+					$pageSize = 50;
+			}
+		
 			$numOfResults =  $resultsProvider->getNumResults($term);
 
 			echo"<p class='resultCount'>$numOfResults Results Found";
@@ -133,6 +144,9 @@ include("classes/ResultsProvider.php"); //class call
 
 </div>
 <script type="text/javascript" src="js/script.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
 </body>
 </html>

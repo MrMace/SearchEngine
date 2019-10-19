@@ -245,3 +245,42 @@ body {
 a .pageNum {
     color: #E4CAFF;
 }
+
+.resultSection .imgResults {
+    margin: 20px;
+}
+
+.itemInGrid{
+    position:relative;
+}
+
+.itemInGrid img {
+    max-width: 200px;
+    min-width: 50px;
+    visibility:hidden;
+}
+
+
+.itemInGrid .imgDetails {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    overflow:hidden;
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+    padding:5px;
+    font-size:12px;
+    box-sizing:border-box;
+    white-space:nowrap;
+    visibility:hidden;
+}
+
+.itemInGrid:hover .imgDetails {
+    visibility:visible;
+}
+
+.fancybox-caption.fancybox-caption--separate {
+    background-color: white;
+    font-size: 18px;
+}
