@@ -35,4 +35,8 @@
 #363946 Onyx
 D8D8D8 Greysborrow
 
+#afadad darker gresyborrow
+
+#E4CAFF purplish crystal ball color
+
 -->

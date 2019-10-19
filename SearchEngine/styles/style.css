@@ -61,7 +61,7 @@ body {
     outline: none;
 }
 
-.mainContain .searchBarContain .searchBox {
+.mainContain .searchContain .searchBox {
     border: none;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.06);
     height: 50px;
@@ -165,4 +165,83 @@ body {
 .tabNavContain .tabNav li.active a {
     font-weight: bold;
     color: #A00000;
+}
+
+
+.resultSection {
+    flex: 1;
+}
+
+    .resultSection .resultCount {
+        font-size: 12px;
+        color: #afadad;
+        margin-left: 150px
+    }
+
+    .resultSection .websiteResults {
+        margin-left: 150px;
+    }
+
+.resultsContain {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.resultsContain .title {
+    margin: 0;
+}
+
+.resultsContain .title a {
+    color: #A00000;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.resultsContain .title a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.resultsContain .url {
+    color: #afadad;
+    font-size: 14px;
+}
+
+.resultsContain .description {
+    font-size: 12px;
+    color: #363946;
+}
+
+.pagenationContain {
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.pageBtns {
+    display:flex;
+
+}
+
+.pageNumContain img {
+    height:35px;
+}
+
+.pageNumContainer, .pageNumContainer a {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-decoration:none;
+}
+
+.pageNum {
+    color: #A00000;
+    font-size: 16px;
+    margin:3px;
+}
+
+a .pageNum {
+    color: #E4CAFF;
 }

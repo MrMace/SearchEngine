@@ -1,10 +1,13 @@
 <?php
 include("config.php");//db
+include("classes/ResultsProvider.php"); //class call
 	//If user don't type anything in search, resond with messege.
 	$term = isset($_GET["term"]) ? $_GET["term"] : exit("I work with words. No words, no search!");
 
 	//If term is not set make websites tab active.
 	$type = isset($_GET["type"]) ? $_GET["type"] : "websites";
+	//gets the page var and reverts to one if none;
+	$page = isset($_GET["page"]) ? $_GET["page"] : 1;
 	
 	
 ?>
@@ -13,6 +16,7 @@ include("config.php");//db
 <head>
 	<title>Search Craft</title>
 	<link rel="stylesheet" type"text/css" href="styles/style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -29,8 +33,11 @@ include("config.php");//db
 
 		<div class="searchContain">
 			<form action="search.php" method="GET">
+
+				
 					<div class="searchBarContain">
-						<input class="searchBox" type="text" name="term">
+						<input type="hidden" name="type" value="<?php echo $type ?>">
+						<input class="searchBox" type="text" name="term" value="<?php echo$term; ?>">
 				<button class="searchBtn">
 				<img src="imgs/icons/search.png">
 				</button>
@@ -57,8 +64,75 @@ include("config.php");//db
 		</div>
 	</div>
 	
+	<div class="resultSection">
+	
+		<?php 
+		
+			$resultsProvider = new ResultsProvider($con);
+			$pageSize = 20;
+			$numOfResults =  $resultsProvider->getNumResults($term);
+
+			echo"<p class='resultCount'>$numOfResults Results Found";
+
+			echo $resultsProvider->getResults($page,$pageSize,$term);
+		
+		?>
+	
+	</div>
+
+	<div class="pagenationContain">
+
+
+		<div class="pageBtns">
+
+			<div class="pageNumContainer">
+
+
+			</div>
+
+			<?php 
+			//page system to calculate remain pages.
+			$pagesShow = 10;
+			$numOfPages = ceil($numOfResults/ $pageSize);
+			$pagesLeft = min($pagesShow, $numOfPages);
+			//round down pages
+			$currentPage = $page - floor($pagesShow / 2);
+			//if current page is less than one set to one.
+			if($currentPage < 1){
+				$currentPage = 1;
+			}
+			if($currentPage + $pagesLeft > $numOfPages +1){
+				$currentPage = $numOfPages + 1 - $pagesLeft;
+			}
+
+			while($pagesLeft != 0 && $currentPage <= $numOfPages){
+
+				if($currentPage == $page){
+			
+				echo "<div class='pageNumContainer'>
+				
+				<span class='pageNum'>$currentPage</span>
+				</div>";
+				}else {
+				echo "<div class='pageNumContainer'>
+					<a href='search.php?term=$term&type=$type&page=$currentPage'>
+						<span class='pageNum'>$currentPage</span>
+					</a>
+				</div>";
+				}
+
+				$currentPage++;
+				$pagesLeft--;
+
+			}
+			
+			
+			?>
+		</div>
+	</div>
 
 </div>
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
